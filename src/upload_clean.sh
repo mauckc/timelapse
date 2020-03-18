@@ -36,12 +36,12 @@ function cleanUploads3
   fi
 }
 
-for d in $(ls $BASE_SAVE_DIR/):
+for d in $(ls -l $BASE_SAVE_DIR/ | grep '^d' | awk '{ print $9 }')
 do
   echo "Processing $d directory.."
   for f in $(ls $BASE_SAVE_DIR/$d)
   do
-     echo "Processing $f file.."
-     cleanUploads3 $f
+    echo "Processing $f file.."
+    cleanUploads3 $f
   done
 done
