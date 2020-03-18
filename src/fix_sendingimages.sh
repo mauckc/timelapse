@@ -4,9 +4,9 @@ SENDINGIMAGES_CONF="/system/sdcard/config/sendingimages.conf"
 BASE_SAVE_DIR="/system/sdcard/DCIM/local/precloud"
 CLOUD_SAVE_DIR="/system/sdcard/DCIM/local/cloud"
 
-if [ -f "$SENDINGIMAGES_CONF" ]; then
-    . "$SENDINGIMAGES_CONF" 2>/dev/null
-fi
+# if [ -f "$SENDINGIMAGES_CONF" ]; then
+. "$SENDINGIMAGES_CONF" 2>/dev/null
+#fi
 
 function cleanUploads3
 {
