@@ -44,7 +44,8 @@ while IFS= read -r line
 do
   echo "$line"
   old_capture_date="$(echo $line | cut -c 1-10)"
-  for f in $(/bin/ls $CLOUD_SAVE_DIR/$old_capture_date/$line"*")
+  line="$(echo $line | cut -c 1-15)"
+  for f in $(/bin/ls $CLOUD_SAVE_DIR/$old_capture_date/$line*)
   do
     echo $f
     echo $(/usr/bin/basename --"$f")
