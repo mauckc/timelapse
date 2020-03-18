@@ -1,0 +1,9 @@
+# min   hour    day     month   weekday command
+*/15    *       *       *       *       busybox run-parts /system/sdcard/config/cron/periodic/15min
+0       *       *       *       *       busybox run-parts /system/sdcard/config/cron/periodic/hourly
+0       2       *       *       *       busybox run-parts /system/sdcard/config/cron/periodic/daily
+0       3       *       *       6       busybox run-parts /system/sdcard/config/cron/periodic/weekly
+0       5       1       *       *       busybox run-parts /system/sdcard/config/cron/periodic/monthly
+0       3       *       *       *       busybox reboot
+55      23      *       *       *       busybox nohup /system/sdcard/scripts/clean.sh &> /tmp/clean.log
+0       *       *       *       *       busybox nohup /system/sdcard/scripts/upload_clean.sh &> /tmp/upload_clean.log
