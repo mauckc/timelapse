@@ -6,7 +6,7 @@ CLOUD_SAVE_DIR="/system/sdcard/DCIM/local/cloud"
 
 # if [ -f "$SENDINGIMAGES_CONF" ]; then
 . "$SENDINGIMAGES_CONF" 2>/dev/null
-#fi
+# fi
 
 function cleanUploads3
 {
@@ -47,6 +47,7 @@ do
   for f in $(ls $CLOUD_SAVE_DIR/$old_capture_date/$line*)
   do
     echo $f
+    echo $(basename --"$f")
     cleanUploads3 $(basename --"$f")
   done
 done < "$input"
