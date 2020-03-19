@@ -6,4 +6,4 @@
 0       5       1       *       *       busybox run-parts /system/sdcard/config/cron/periodic/monthly
 0       3       *       *       *       busybox reboot
 55      23      *       *       *       busybox nohup /system/sdcard/scripts/clean.sh &> /tmp/clean.log
-15       *       *       *       *       busybox nohup /system/sdcard/scripts/upload_clean.sh &> /tmp/upload_clean.log
+30       *       *       *       *       busybox nohup /system/sdcard/scripts/upload_clean.sh &> /tmp/upload_clean.log
